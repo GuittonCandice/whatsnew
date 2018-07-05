@@ -18,7 +18,10 @@ class HomeController: UIViewController, UITableViewDataSource, UITabBarDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.rowHeight = 200
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         
         let defaults = UserDefaults.standard
@@ -46,6 +49,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITabBarDelegate 
         guard let channels = channels else { return cell}
         
         cell.title.text = channels[indexPath.row].snippet.title
+        cell.ibDescriptionLabel.text = channels[indexPath.row].snippet.description
         
         return cell
     }
@@ -80,7 +84,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITabBarDelegate 
             
             let dataString = String(data: data, encoding: .utf8)
             
-            print("Getting dataString from api : \(dataString)")
+            print("Getting dataString from api : \(String(describing: dataString))")
             
             do {
                 

@@ -12,6 +12,8 @@ class HomeControllerTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var ibImageView: UIImageView!
+    @IBOutlet weak var ibDescriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
