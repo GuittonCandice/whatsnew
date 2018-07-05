@@ -7,19 +7,9 @@
 //
 
 struct GetChannelResponse: Codable, CustomDebugStringConvertible {
-    
     let items: [Item]
     
     var debugDescription: String {
         return "GetChannelResponse{\(items)}"
-    }
-}
-
-struct Item: Codable, CustomDebugStringConvertible {
-    let id: String
-    let snippet: Channel
-    
-    var debugDescription: String {
-        return "Item{id:\(id), snippet:\(snippet)}"
     }
 }

@@ -8,5 +8,6 @@ target 'WhatsNew' do
   # Pods for WhatsNew
 	
   pod 'GoogleSignIn'
+  pod 'Kingfisher'
 
 end

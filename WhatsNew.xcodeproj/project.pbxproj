@@ -7,26 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2802699220EE9E8A00471B19 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802699120EE9E8A00471B19 /* Channel.swift */; };
 		281C52F320ED5C0E00179ECA /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C52F220ED5C0E00179ECA /* HomeController.swift */; };
 		281C52F520ED634800179ECA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C52F420ED634800179ECA /* Constants.swift */; };
 		281C52FA20ED7E2800179ECA /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C52F920ED7E2800179ECA /* FavoritesController.swift */; };
-		281C52FC20ED826C00179ECA /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C52FB20ED826C00179ECA /* Channel.swift */; };
-		281C52FE20ED833F00179ECA /* GetChannelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C52FD20ED833F00179ECA /* GetChannelResponse.swift */; };
 		28C110A020EC0E3B008BDD17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C1109F20EC0E3B008BDD17 /* AppDelegate.swift */; };
 		28C110A220EC0E3B008BDD17 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C110A120EC0E3B008BDD17 /* LoginController.swift */; };
 		28C110A520EC0E3B008BDD17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C110A320EC0E3B008BDD17 /* Main.storyboard */; };
 		28C110A720EC0E3B008BDD17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C110A620EC0E3B008BDD17 /* Assets.xcassets */; };
 		28C110AA20EC0E3B008BDD17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C110A820EC0E3B008BDD17 /* LaunchScreen.storyboard */; };
+		28D3827C20EE9F55005425B5 /* GetChannelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D3827B20EE9F55005425B5 /* GetChannelResponse.swift */; };
+		28D3827E20EE9F94005425B5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D3827D20EE9F94005425B5 /* Item.swift */; };
+		28D3828020EE9FC5005425B5 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D3827F20EE9FC5005425B5 /* Thumbnail.swift */; };
+		28D3828220EEBBAD005425B5 /* ChannelActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D3828120EEBBAD005425B5 /* ChannelActivitiesController.swift */; };
+		28D3828420EEC288005425B5 /* ChannelActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D3828320EEC288005425B5 /* ChannelActivityCell.swift */; };
 		28F00EF720EDA8BB00C24B3C /* HomeControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F00EF620EDA8BB00C24B3C /* HomeControllerTableViewCell.swift */; };
 		F2E9EE423BEA9471D6B79721 /* Pods_WhatsNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78C9AB8F6777C53E6F04C08 /* Pods_WhatsNew.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2802699120EE9E8A00471B19 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		281C52F220ED5C0E00179ECA /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		281C52F420ED634800179ECA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		281C52F920ED7E2800179ECA /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
-		281C52FB20ED826C00179ECA /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
-		281C52FD20ED833F00179ECA /* GetChannelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChannelResponse.swift; sourceTree = "<group>"; };
 		28C1109C20EC0E3B008BDD17 /* WhatsNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C1109F20EC0E3B008BDD17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28C110A120EC0E3B008BDD17 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -35,6 +38,11 @@
 		28C110A920EC0E3B008BDD17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28C110AB20EC0E3B008BDD17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28C110B120EC19B6008BDD17 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28D3827B20EE9F55005425B5 /* GetChannelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChannelResponse.swift; sourceTree = "<group>"; };
+		28D3827D20EE9F94005425B5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		28D3827F20EE9FC5005425B5 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		28D3828120EEBBAD005425B5 /* ChannelActivitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelActivitiesController.swift; sourceTree = "<group>"; };
+		28D3828320EEC288005425B5 /* ChannelActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelActivityCell.swift; sourceTree = "<group>"; };
 		28F00EF620EDA8BB00C24B3C /* HomeControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerTableViewCell.swift; sourceTree = "<group>"; };
 		606129C199A7A35D3E85CA79 /* Pods-WhatsNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNew.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsNew/Pods-WhatsNew.debug.xcconfig"; sourceTree = "<group>"; };
 		C37E837E9597CF8B95108F0C /* Pods-WhatsNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNew.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsNew/Pods-WhatsNew.release.xcconfig"; sourceTree = "<group>"; };
@@ -53,11 +61,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2802699320EE9EC000471B19 /* channel */ = {
+			isa = PBXGroup;
+			children = (
+				2802699120EE9E8A00471B19 /* Channel.swift */,
+				28D3827B20EE9F55005425B5 /* GetChannelResponse.swift */,
+				28D3827D20EE9F94005425B5 /* Item.swift */,
+				28D3827F20EE9FC5005425B5 /* Thumbnail.swift */,
+			);
+			path = channel;
+			sourceTree = "<group>";
+		};
 		281C52F620ED6E5F00179ECA /* models */ = {
 			isa = PBXGroup;
 			children = (
-				281C52FB20ED826C00179ECA /* Channel.swift */,
-				281C52FD20ED833F00179ECA /* GetChannelResponse.swift */,
+				2802699320EE9EC000471B19 /* channel */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -103,6 +121,7 @@
 				28C110A120EC0E3B008BDD17 /* LoginController.swift */,
 				281C52F220ED5C0E00179ECA /* HomeController.swift */,
 				281C52F920ED7E2800179ECA /* FavoritesController.swift */,
+				28D3828120EEBBAD005425B5 /* ChannelActivitiesController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -111,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				28F00EF620EDA8BB00C24B3C /* HomeControllerTableViewCell.swift */,
+				28D3828320EEC288005425B5 /* ChannelActivityCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -231,12 +251,14 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -268,13 +290,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				281C52FC20ED826C00179ECA /* Channel.swift in Sources */,
 				28C110A220EC0E3B008BDD17 /* LoginController.swift in Sources */,
-				281C52FE20ED833F00179ECA /* GetChannelResponse.swift in Sources */,
+				28D3828220EEBBAD005425B5 /* ChannelActivitiesController.swift in Sources */,
+				28D3827E20EE9F94005425B5 /* Item.swift in Sources */,
+				2802699220EE9E8A00471B19 /* Channel.swift in Sources */,
 				28C110A020EC0E3B008BDD17 /* AppDelegate.swift in Sources */,
+				28D3827C20EE9F55005425B5 /* GetChannelResponse.swift in Sources */,
 				28F00EF720EDA8BB00C24B3C /* HomeControllerTableViewCell.swift in Sources */,
 				281C52F320ED5C0E00179ECA /* HomeController.swift in Sources */,
 				281C52F520ED634800179ECA /* Constants.swift in Sources */,
+				28D3828020EE9FC5005425B5 /* Thumbnail.swift in Sources */,
+				28D3828420EEC288005425B5 /* ChannelActivityCell.swift in Sources */,
 				281C52FA20ED7E2800179ECA /* FavoritesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

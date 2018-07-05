@@ -6,13 +6,13 @@
 //  Copyright © 2018 Candice Guitton. All rights reserved.
 //
 
-import UIKit
-
 struct Channel : Codable, CustomDebugStringConvertible {
+    let channelId: String
     let title: String
     let description: String
+    let thumbnails: Thumbnail
     
     var debugDescription: String {
-        return "Channel{title:\(title), description:\(description)}"
+        return "Channel{let channelId:\(channelId) title:\(title), description:\(description)}"
     }
 }

@@ -19,9 +19,11 @@ PODS:
   - GTMSessionFetcher/Core (1.1.15)
   - GTMSessionFetcher/Full (1.1.15):
     - GTMSessionFetcher/Core (= 1.1.15)
+  - Kingfisher (4.8.0)
 
 DEPENDENCIES:
   - GoogleSignIn
+  - Kingfisher
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -29,13 +31,15 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMOAuth2
     - GTMSessionFetcher
+    - Kingfisher
 
 SPEC CHECKSUMS:
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
 
-PODFILE CHECKSUM: 5dfc7403a947a576fc5a2edb8f773706feac79e6
+PODFILE CHECKSUM: a57c30612a2d89eb582a01bd4afa049714c9b907
 
 COCOAPODS: 1.5.3
