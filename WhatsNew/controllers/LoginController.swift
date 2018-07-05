@@ -16,16 +16,15 @@ class LoginController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let scope: NSString = "https://www.googleapis.com/auth/youtube.readonly"
+        let currentScopes: NSArray = GIDSignIn.sharedInstance().scopes! as NSArray
+        GIDSignIn.sharedInstance().scopes = currentScopes.adding(scope)
+        
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         
         // Uncomment to automatically sign in the user.
         //GIDSignIn.sharedInstance().signInSilently()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -34,9 +33,13 @@ class LoginController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate{
             return
         }
         
-        print(user.profile.familyName)
+        let idToken = user.authentication.accessToken
+        let defaults = UserDefaults.standard
+        
+        defaults.set(idToken, forKey: Constants.USER_TOKEN_KEY)
+        
+        dismiss(animated: true, completion: nil)
     }
-
 
 }
 
