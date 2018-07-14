@@ -178,7 +178,7 @@
         <scene sceneID="ZdW-xP-H1U">
             <objects>
                 <tableViewController title="Dernières vidéos" id="eAF-jl-Dy2" customClass="ChannelActivitiesController" customModule="WhatsNew" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Xe-ce-skU">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Xe-ce-skU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -240,6 +240,7 @@
                                     <outlet property="descriptionLabel" destination="pve-3G-vhn" id="FVe-aU-ssU"/>
                                     <outlet property="ibImageView" destination="tR7-cN-fPk" id="e8q-wr-ifP"/>
                                     <outlet property="ibTitleLabel" destination="nCU-WZ-MGa" id="Zys-Of-165"/>
+                                    <segue destination="rJo-0s-ZmA" kind="show" identifier="showVideo" id="3ks-O5-hii"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -252,6 +253,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoj-eZ-Znc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2925.5999999999999" y="40.64039408866995"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="NHl-AL-Vak">
+            <objects>
+                <viewController id="rJo-0s-ZmA" customClass="VideoViewController" customModule="WhatsNew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mDa-8e-pam">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ae-uo-MFH">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5m-P4-X4c">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Lay-sN-pMJ"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ttitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdY-Y2-2Da">
+                                        <rect key="frame" x="10" y="160" width="355" height="26.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="b5m-P4-X4c" firstAttribute="top" secondItem="3ae-uo-MFH" secondAttribute="top" id="01e-c9-kBs"/>
+                                    <constraint firstAttribute="trailing" secondItem="b5m-P4-X4c" secondAttribute="trailing" id="Wm5-2G-Oi7"/>
+                                    <constraint firstItem="LdY-Y2-2Da" firstAttribute="leading" secondItem="3ae-uo-MFH" secondAttribute="leading" constant="10" id="btR-DF-0w0"/>
+                                    <constraint firstItem="LdY-Y2-2Da" firstAttribute="top" secondItem="b5m-P4-X4c" secondAttribute="bottom" constant="10" id="cEK-uV-PrO"/>
+                                    <constraint firstAttribute="trailing" secondItem="LdY-Y2-2Da" secondAttribute="trailing" constant="10" id="lEu-fv-vKr"/>
+                                    <constraint firstItem="b5m-P4-X4c" firstAttribute="leading" secondItem="3ae-uo-MFH" secondAttribute="leading" id="w8k-mJ-Czt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3ae-uo-MFH" firstAttribute="top" secondItem="CRK-a5-38f" secondAttribute="top" id="98g-T9-oS8"/>
+                            <constraint firstItem="3ae-uo-MFH" firstAttribute="leading" secondItem="CRK-a5-38f" secondAttribute="leading" id="dUp-zI-U2D"/>
+                            <constraint firstItem="CRK-a5-38f" firstAttribute="trailing" secondItem="3ae-uo-MFH" secondAttribute="trailing" id="ig0-jE-YI5"/>
+                            <constraint firstItem="CRK-a5-38f" firstAttribute="bottom" secondItem="3ae-uo-MFH" secondAttribute="bottom" id="vNr-6n-CYg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CRK-a5-38f"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7X-2x-nHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3990" y="41"/>
         </scene>
         <!--Favorites Controller-->
         <scene sceneID="eRS-bs-LlU">

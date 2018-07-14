@@ -76,6 +76,21 @@ class ChannelActivitiesController: UITableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if "showVideo" == segue.identifier {
+            let destinationController = segue.destination as!VideoViewController
+            let cell = sender as! ChannelActivityCell
+            let indexPath = tableView.indexPath(for: cell)
+            
+            if videos != nil {
+                let item = videos?[(indexPath?.row)!]
+                destinationController.videoId = item?.contentDetails.upload.videoId
+            }
+            
+        }
+        
+    }
+    
     func loginAgain() {
         DispatchQueue.main.async{
             self.performSegue(withIdentifier: "loginView", sender: self)
