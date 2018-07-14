@@ -7,7 +7,14 @@
 //
 
 struct Thumbnail: Codable, CustomDebugStringConvertible {
+    
+    enum CodingKeys: String, CodingKey {
+        case medium
+        case small = "default"
+    }
+    
     let medium: ThumbnailUrl
+    let small: ThumbnailUrl
     
     var debugDescription: String {
         return "Item{medium:\(medium)}"

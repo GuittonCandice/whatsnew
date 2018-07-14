@@ -11,7 +11,9 @@ import Kingfisher
 
 class HomeController: UIViewController, UITableViewDataSource, UITabBarDelegate {
     
+    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var progressIndicatorView: UIActivityIndicatorView!
     
     var userToken: String?
     
@@ -22,8 +24,8 @@ class HomeController: UIViewController, UITableViewDataSource, UITabBarDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressIndicatorView?.startAnimating()
         tableView.tableFooterView = UIView(frame: .zero)
-        tableView.rowHeight = 200
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,16 +72,16 @@ class HomeController: UIViewController, UITableViewDataSource, UITabBarDelegate 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if "showChannelActivities" == segue.identifier {
-            let destinationController = segue.destination as! ChannelActivitiesController
+            let destinationController = segue.destination as!ChannelActivitiesController
             let cell = sender as! HomeControllerTableViewCell
             let indexPath = tableView.indexPath(for: cell)
             
             if channels != nil {
                 let item = channels?[(indexPath?.row)!]
-                destinationController.channelId = item?.snippet.channelId
+                destinationController.channelId = item?.snippet.resourceId.channelId
+                destinationController.smallUrl = item?.snippet.thumbnails.small.url
             }
-            
-            
+        
         }
         
     }
@@ -106,20 +108,24 @@ class HomeController: UIViewController, UITableViewDataSource, UITabBarDelegate 
                 }
             }
             
-            let dataString = String(data: data, encoding: .utf8)
+            //let dataString = String(data: data, encoding: .utf8)
             
-            print("Getting dataString from api : \(String(describing: dataString))")
+            //print("Getting dataString from api : \(String(describing: dataString))")
             
             do {
                 
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(GetChannelResponse.self, from: data)
-                print("Getting JSON from api : \(response)")
-                print("total channels : \(response.items.count)")
+                //print("Getting JSON from api : \(response)")
+                //print("total channels : \(response.items.count)")
+
                 
                 self.channels = response.items
                 
                 DispatchQueue.main.async{
+                    self.progressIndicatorView?.stopAnimating()
+                    self.loadingView.isHidden = true
+                    self.tableView.isHidden = false
                     self.tableView.reloadData()
                 }
                 

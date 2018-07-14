@@ -10,7 +10,8 @@ import UIKit
 
 class ChannelActivityCell: UITableViewCell {
 
-    @IBOutlet weak var ibDescriptionLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var ibTitleLabel: UILabel!
     @IBOutlet weak var ibImageView: UIImageView!
     

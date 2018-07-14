@@ -13,14 +13,14 @@ class ChannelActivitiesController: UITableViewController {
     
     var userToken: String?
     var channelId: String?
-    let maxActivities = 10
+    var smallUrl: String?
+    let maxActivities = 25
     
-    var channels: [Item]?
+    var videos: [ChannelActivityItem]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
-        tableView.rowHeight = 200
         
         guard channelId != nil else {return}
         
@@ -28,19 +28,32 @@ class ChannelActivitiesController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = channels?.count else { return 0 }
+        guard let count = videos?.count else { return 0 }
         return count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "channelActivityCell", for: indexPath) as! ChannelActivityCell
         
-        guard let channels = channels else { return cell}
+        guard let videos = videos else { return cell}
         
-        cell.ibTitleLabel.text = channels[indexPath.row].snippet.title
-        cell.ibDescriptionLabel.text = channels[indexPath.row].snippet.description
+        guard "upload" == videos[indexPath.row].snippet.type else {return cell}
         
-        let url = URL(string: channels[indexPath.row].snippet.thumbnails.medium.url)
+        cell.ibTitleLabel.text = videos[indexPath.row].snippet.title
+        cell.descriptionLabel.text = videos[indexPath.row].snippet.description
+        
+        let url = URL(string: videos[indexPath.row].snippet.thumbnails.medium.url)
+        
+        if let smallUrl = self.smallUrl {
+            let smallUrlResource = URL(string: smallUrl)
+            cell.avatarImageView.kf.setImage(with: smallUrlResource)
+            
+            // Circular imageView
+            cell.avatarImageView.layer.cornerRadius = cell.avatarImageView.frame.height / 2
+            cell.avatarImageView.layer.masksToBounds = false
+            cell.avatarImageView.clipsToBounds = true
+        }
+        
         
         cell.ibImageView.kf.setImage(with: url)
         
@@ -97,18 +110,13 @@ class ChannelActivitiesController: UITableViewController {
                 }
             }
             
-            let dataString = String(data: data, encoding: .utf8)
-            
-            print("Getting dataString from api : \(String(describing: dataString))")
-            
             do {
                 
                 let decoder = JSONDecoder()
-                let response = try decoder.decode(GetChannelResponse.self, from: data)
+                let response = try decoder.decode(GetChannelActivityResponse.self, from: data)
                 print("Getting JSON from api : \(response)")
-                print("total channels : \(response.items.count)")
                 
-                self.channels = response.items
+                self.videos = response.items
                 
                 DispatchQueue.main.async{
                     self.tableView.reloadData()
