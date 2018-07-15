@@ -7,12 +7,13 @@
 //
 
 struct Channel : Codable, CustomDebugStringConvertible {
-    let title: String
+    var title: String? = nil
     let description: String
     let thumbnails: Thumbnail
     let resourceId: ResourceId
     
+    
     var debugDescription: String {
-        return "Channel{title:\(title), description:\(description), resourceId:\(resourceId)}"
+        return "Channel{title:\(String(describing: title)), description:\(description), resourceId:\(resourceId)}"
     }
 }

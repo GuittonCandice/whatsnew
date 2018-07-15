@@ -7,10 +7,10 @@
 //
 
 struct ContentDetail: Codable, CustomDebugStringConvertible {
-    let upload: Upload
+    var upload: Upload? = nil
     
     var debugDescription: String {
-        return "ContentDetail{upload:\(upload)}"
+        return "ContentDetail{upload:\(String(describing: upload))}"
     }
 }
 

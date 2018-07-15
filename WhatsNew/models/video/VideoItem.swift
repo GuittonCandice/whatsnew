@@ -9,8 +9,9 @@
 struct VideoItem: Codable, CustomDebugStringConvertible {
     
     let snippet: Video
+    let statistics: Statistics
     
     var debugDescription: String {
-        return "VideoItem{snippet:\(snippet)}"
+        return "VideoItem{snippet:\(snippet), statistics:\(statistics)}"
     }
 }

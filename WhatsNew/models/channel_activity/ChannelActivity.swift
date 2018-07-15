@@ -9,12 +9,12 @@
 struct ChannelActivity: Codable, CustomDebugStringConvertible {
     
     let publishedAt: String
-    let title: String
-    let description: String
+    var title: String? = nil
+    var description: String? = nil
     let thumbnails: Thumbnail
     let type: String
     
     var debugDescription: String {
-        return "Channelactivity{publishedAt:\(publishedAt), title:\(title),description:\(description),thumbnails:\(thumbnails),type:\(type) }"
+        return "Channelactivity{publishedAt:\(publishedAt), title:\(String(describing: title)),description:\(String(describing: description)),thumbnails:\(thumbnails),type:\(type) }"
     }
 }

@@ -37,8 +37,6 @@ class ChannelActivitiesController: UITableViewController {
         
         guard let videos = videos else { return cell}
         
-        guard "upload" == videos[indexPath.row].snippet.type else {return cell}
-        
         cell.ibTitleLabel.text = videos[indexPath.row].snippet.title
         cell.descriptionLabel.text = videos[indexPath.row].snippet.description
         
@@ -84,7 +82,8 @@ class ChannelActivitiesController: UITableViewController {
             
             if videos != nil {
                 let item = videos?[(indexPath?.row)!]
-                destinationController.videoId = item?.contentDetails.upload.videoId
+                destinationController.videoId = item?.contentDetails.upload?.videoId
+                destinationController.smallUrl = self.smallUrl
             }
             
         }
@@ -131,7 +130,16 @@ class ChannelActivitiesController: UITableViewController {
                 let response = try decoder.decode(GetChannelActivityResponse.self, from: data)
                 print("Getting JSON from api : \(response)")
                 
-                self.videos = response.items
+                
+                var videos = [ChannelActivityItem]()
+                
+                for video in response.items {
+                    if video.snippet.type == "upload" {
+                        videos.append(video)
+                    }
+                }
+                
+                self.videos = videos
                 
                 DispatchQueue.main.async{
                     self.tableView.reloadData()

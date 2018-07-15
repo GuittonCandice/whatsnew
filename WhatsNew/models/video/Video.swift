@@ -9,8 +9,10 @@
 struct Video: Codable, CustomDebugStringConvertible {
     
     let title: String
+    let description: String
+    let thumbnails: Thumbnail
     
     var debugDescription: String {
-        return "Video{title:\(title)}"
+        return "Video{title:\(title), description: \(description)}"
     }
 }

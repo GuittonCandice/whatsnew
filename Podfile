@@ -9,5 +9,6 @@ target 'WhatsNew' do
 	
   pod 'GoogleSignIn'
   pod 'Kingfisher'
+  pod 'YouTubePlayer'
 
 end
